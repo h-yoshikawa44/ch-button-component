@@ -5,7 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint-check": "yarn lint:eslint && yarn check:prettier",
+    "lint:eslint": "yarn run -s eslint './src/**/*.{js,jsx,ts,tsx}'",
+    "check:prettier": "yarn run -s prettier --check './src/**/*.{js,jsx,ts,tsx,html,gql,graphql,json}'",
+    "fix": "yarn fix:eslint && yarn fix:prettier",
+    "fix:eslint": "yarn lint:eslint --fix",
+    "fix:prettier": "yarn check:prettier --write"
   },
   "dependencies": {
     "next": "10.2.3",
