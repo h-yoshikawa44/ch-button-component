@@ -68,44 +68,45 @@ const Home = () => {
 };
 
 const container = css`
-  min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
+  min-height: 100vh;
+  padding: 0 0.5rem;
 `;
 
 const main = css`
-  padding: 5rem 0;
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
 `;
 
 const footer = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100px;
   border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   a {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-grow: 1;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
 const title = css`
   margin: 0;
-  line-height: 1.15;
   font-size: 4rem;
+  line-height: 1.15;
+
   a {
     color: #0070f3;
     text-decoration: none;
@@ -122,42 +123,43 @@ const textCenter = css`
 `;
 
 const description = css`
-  line-height: 1.5;
   font-size: 1.5rem;
+  line-height: 1.5;
 `;
 
 const code = css`
-  background: #fafafa;
-  border-radius: 5px;
   padding: 0.75rem;
-  font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+  font-size: 1.1rem;
+  background: #fafafa;
+  border-radius: 5px;
 `;
 
 const grid = css`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
+
   @media (max-width: 600px) {
-    width: 100%;
     flex-direction: column;
+    width: 100%;
   }
 `;
 
 const card = css`
-  margin: 1rem;
+  width: 45%;
   padding: 1.5rem;
-  text-align: left;
+  margin: 1rem;
   color: inherit;
+  text-align: left;
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
 
   :hover,
   :focus,
