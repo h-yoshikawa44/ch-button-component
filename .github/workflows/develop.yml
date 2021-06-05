@@ -1,4 +1,5 @@
 name: Develop Check
+on: [push, pull_request]
 
 env:
   project-name: button-component
