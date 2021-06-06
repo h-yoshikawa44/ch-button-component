@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import 'modern-css-reset/dist/reset.min.css';
 
 export const globalStyle = css`
   html,
