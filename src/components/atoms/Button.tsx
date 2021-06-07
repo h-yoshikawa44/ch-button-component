@@ -1,4 +1,4 @@
-import { VFC, FC, createElement } from 'react';
+import { VFC, FC, ButtonHTMLAttributes, ClassAttributes } from 'react';
 import { css } from '@emotion/react';
 import { color as createRGB } from 'csx';
 import {
@@ -43,15 +43,16 @@ const Icon: VFC<IconProps> = ({ iconName, position }) => {
   );
 };
 
-type ButtonProps = {
-  variant?: Variant;
-  size?: Size;
-  color?: Color;
-  startIcon?: IconName;
-  endIcon?: IconName;
-  disableShadow?: boolean;
-  disabled?: boolean;
-};
+type ButtonProps = ClassAttributes<HTMLButtonElement> &
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    variant?: Variant;
+    size?: Size;
+    color?: Color;
+    startIcon?: IconName;
+    endIcon?: IconName;
+    disableShadow?: boolean;
+    disabled?: boolean;
+  };
 
 const Button: FC<ButtonProps> = ({
   children = 'Default',
@@ -62,6 +63,7 @@ const Button: FC<ButtonProps> = ({
   endIcon,
   disableShadow = false,
   disabled = false,
+  ...props
 }) => {
   return (
     <button
@@ -72,6 +74,7 @@ const Button: FC<ButtonProps> = ({
         disabled && buttonDisableColor(variant),
       ]}
       disabled={disabled}
+      {...props}
     >
       {startIcon && <Icon iconName={startIcon} position="start" />}
       {children}
@@ -132,8 +135,14 @@ const icon = (position: Position) => {
 const buttonBase = (size: Size) => {
   return css`
     padding: ${styleMap.padding[size]};
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
     border: none;
     border-radius: 6px;
+    transition: background-color 0.3s;
   `;
 };
 
