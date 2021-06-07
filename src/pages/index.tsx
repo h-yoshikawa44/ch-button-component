@@ -1,148 +1,180 @@
 import { css } from '@emotion/react';
 import Layout from '@/components/Layout';
+import Button from '@/components/atoms/Button';
+import ComponentLabel from '@/components/molecules/ComponentLabel';
 
 const Home = () => {
   return (
-    <div css={container}>
-      <Layout>
-        <main css={main}>
-          <h1 css={[title, textCenter]}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-
-          <p css={[description, textCenter]}>
-            Get started by editing <code css={code}>pages/index.js</code>
-          </p>
-
-          <div css={grid}>
-            <a href="https://nextjs.org/docs" css={card}>
-              <h2>Documentation &rarr;</h2>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" css={card}>
-              <h2>Learn &rarr;</h2>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              css={card}
-            >
-              <h2>Examples &rarr;</h2>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              css={card}
-            >
-              <h2>Deploy &rarr;</h2>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
+    <Layout>
+      <div css={container}>
+        <main>
+          <h2>Buttons</h2>
+          <div css={buttonRows}>
+            <div css={buttonRow(3)}>
+              <ComponentLabel
+                htmlFor="<Button />"
+                label="<Button />"
+                component={<Button />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button variant="outline" color="primary" />'}
+                label={'<Button variant="outline" color="primary" />'}
+                component={<Button variant="outline" color="primary" />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button variant="text" color="primary" />'}
+                label={'<Button variant="text" color="primary" />'}
+                component={<Button variant="text" color="primary" />}
+              />
+            </div>
+            <div css={buttonRow(3)}>
+              <ComponentLabel
+                htmlFor={'<Button disableShadow color="primary" />'}
+                label={'<Button disableShadow color="primary" />'}
+                component={<Button disableShadow color="primary" />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button disabled />'}
+                label={'<Button disabled />'}
+                component={<Button disabled />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button variant="text" disabled />'}
+                label={'<Button variant="text" disabled />'}
+                component={<Button variant="text" disabled />}
+              />
+            </div>
+            <div css={buttonRow(2)}>
+              <ComponentLabel
+                htmlFor={
+                  '<Button startIcon="local_grocery_store" color="primary" />'
+                }
+                label={
+                  '<Button startIcon="local_grocery_store" color="primary" />'
+                }
+                component={
+                  <Button startIcon="local_grocery_store" color="primary" />
+                }
+              />
+              <ComponentLabel
+                htmlFor={
+                  '<Button endIcon="local_grocery_store" color="primary" />'
+                }
+                label={
+                  '<Button endIcon="local_grocery_store" color="primary" />'
+                }
+                component={
+                  <Button endIcon="local_grocery_store" color="primary" />
+                }
+              />
+              <ComponentLabel
+                htmlFor={
+                  '<Button startIcon="local_shipping" color="primary" />'
+                }
+                label={'<Button startIcon="local_shipping" color="primary" />'}
+                component={
+                  <Button startIcon="local_shipping" color="primary" />
+                }
+              />
+              <ComponentLabel
+                htmlFor={
+                  '<Button endIcon="add_shopping_cart" color="primary" />'
+                }
+                label={'<Button endIcon="add_shopping_cart" color="primary" />'}
+                component={
+                  <Button startIcon="add_shopping_cart" color="primary" />
+                }
+              />
+              <ComponentLabel
+                htmlFor={
+                  '<Button endIcon="production_quantity_limits" color="primary" />'
+                }
+                label={
+                  '<Button endIcon="production_quantity_limits" color="primary" />'
+                }
+                component={
+                  <Button
+                    startIcon="production_quantity_limits"
+                    color="primary"
+                  />
+                }
+              />
+              <ComponentLabel
+                htmlFor={
+                  '<Button startIcon="remove_shopping_cart" color="primary" />'
+                }
+                label={
+                  '<Button startIcon="remove_shopping_cart" color="primary" />'
+                }
+                component={
+                  <Button startIcon="remove_shopping_cart" color="primary" />
+                }
+              />
+            </div>
+            <div css={buttonRow(3)}>
+              <ComponentLabel
+                htmlFor={'<Button size="sm" color="primary" />'}
+                label={'<Button size="sm" color="primary" />'}
+                component={<Button size="sm" color="primary" />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button size="md" color="primary" />'}
+                label={'<Button size="md" color="primary" />'}
+                component={<Button size="md" color="primary" />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button size="lg" color="primary"/>'}
+                label={'<Button size="lg" color="primary" />'}
+                component={<Button size="lg" color="primary" />}
+              />
+            </div>
+            <div css={buttonRow(4)}>
+              <ComponentLabel
+                htmlFor={'<Button color="default" />'}
+                label={'<Button color="default" />'}
+                component={<Button color="default" />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button color="primary" />'}
+                label={'<Button color="primary" />'}
+                component={<Button color="primary" />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button color="secondary" />'}
+                label={'<Button color="secondary" />'}
+                component={<Button color="secondary" />}
+              />
+              <ComponentLabel
+                htmlFor={'<Button color="danger" />'}
+                label={'<Button color="danger" />'}
+                component={<Button color="danger" />}
+              />
+            </div>
           </div>
         </main>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 };
 
 const container = css`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  /* height: 100vh;
-  min-height: 100vh; */
-  padding: 0 0.5rem;
+  padding: 56px 80px 56px 80px;
+  margin: 0 auto;
 `;
 
-const main = css`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem 0;
+const buttonRows = css`
+  display: grid;
+  grid-row-gap: 45px;
+  padding-top: 24px;
 `;
 
-const title = css`
-  margin: 0;
-  font-size: 4rem;
-  line-height: 1.15;
-
-  a {
-    color: #0070f3;
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus,
-  a:active {
-    text-decoration: underline;
-  }
-`;
-
-const textCenter = css`
-  text-align: center;
-`;
-
-const description = css`
-  font-size: 1.5rem;
-  line-height: 1.5;
-`;
-
-const code = css`
-  padding: 0.75rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-  font-size: 1.1rem;
-  background: #fafafa;
-  border-radius: 5px;
-`;
-
-const grid = css`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  max-width: 800px;
-  margin-top: 3rem;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-    width: 100%;
-  }
-`;
-
-const card = css`
-  width: 45%;
-  padding: 1.5rem;
-  margin: 1rem;
-  color: inherit;
-  text-align: left;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-
-  :hover,
-  :focus,
-  :active {
-    color: #0070f3;
-    border-color: #0070f3;
-  }
-  h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-  }
-  p {
-    margin: 0;
-    font-size: 1.25rem;
-    line-height: 1.5;
-  }
-`;
+const buttonRow = (column: number) => {
+  return css`
+    display: grid;
+    grid-template-columns: repeat(${column}, max-content);
+    grid-row-gap: 45px;
+    grid-column-gap: 64px;
+  `;
+};
 
 export default Home;

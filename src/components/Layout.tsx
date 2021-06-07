@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import { css } from '@emotion/react';
 import SideBar from '@/components/organisms/SideBar';
+import Footer from '@/components/organisms/Footer';
 
 const Layout: FC = ({ children }) => {
   return (
@@ -14,47 +14,17 @@ const Layout: FC = ({ children }) => {
       </Head>
       <div css={container}>
         <SideBar />
-        {children}
+        <div>
+          {children}
+          <Footer />
+        </div>
       </div>
-      <footer css={footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span css={logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
 };
 
 const container = css`
   display: flex;
-`;
-
-const footer = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-
-  a {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-
-const logo = css`
-  height: 1em;
-  margin-left: 0.5rem;
 `;
 
 export default Layout;
