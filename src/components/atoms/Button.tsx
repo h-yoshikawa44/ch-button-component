@@ -1,6 +1,5 @@
 import { VFC, FC, ButtonHTMLAttributes, ClassAttributes } from 'react';
 import { css } from '@emotion/react';
-import { color as createRGB } from 'csx';
 import {
   LocalGroceryStore,
   AddShoppingCart,
@@ -8,6 +7,7 @@ import {
   RemoveShoppingCart,
   LocalShipping,
 } from '@emotion-icons/material-rounded';
+import { getRGBAColor, selectContrastTextColor } from '@/util/color';
 
 type Position = 'start' | 'end';
 type Variant = 'contained' | 'outline' | 'text';
@@ -154,8 +154,12 @@ const buttonColor = ({
   color: Color;
 }) => {
   if (variant === 'contained') {
+    const textColor = selectContrastTextColor(styleMap.color[color].normal, {
+      whiteColor: '#FFFFFF',
+      blackColor: '#3F3F3F',
+    });
     return css`
-      color: ${styleMap.color[color].text};
+      color: ${textColor};
       background-color: ${styleMap.color[color].normal};
       box-shadow: 0 2px 3px rgba(51, 51, 51, 0.2);
 
@@ -166,9 +170,7 @@ const buttonColor = ({
     `;
   }
   if (variant === 'outline') {
-    const opacityColor = createRGB(styleMap.color[color].hover)
-      .fade(0.1)
-      .toString();
+    const rgbaColor = getRGBAColor(styleMap.color[color].hover, 0.1);
     return css`
       color: ${styleMap.color[color].normal};
       background-color: #fff;
@@ -176,21 +178,19 @@ const buttonColor = ({
 
       &:hover,
       &:focus {
-        background-color: ${opacityColor};
+        background-color: ${rgbaColor};
       }
     `;
   }
   if (variant === 'text') {
-    const opacityColor = createRGB(styleMap.color[color].hover)
-      .fade(0.1)
-      .toString();
+    const rgbaColor = getRGBAColor(styleMap.color[color].hover, 0.1);
     return css`
       color: ${styleMap.color[color].normal};
       background-color: #fff;
 
       &:hover,
       &:focus {
-        background-color: ${opacityColor};
+        background-color: ${rgbaColor};
       }
     `;
   }
