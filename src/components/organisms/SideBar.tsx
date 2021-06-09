@@ -27,7 +27,7 @@ const sideBar = css`
 `;
 
 const siteTitle = css`
-  /* font-family: Poppins; */
+  font-family: 'Poppins', sans-serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;

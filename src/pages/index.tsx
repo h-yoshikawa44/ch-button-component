@@ -8,7 +8,7 @@ const Home = () => {
     <Layout>
       <div css={container}>
         <main>
-          <h2>Buttons</h2>
+          <h2 css={pageTitle}>Buttons</h2>
           <div css={buttonRows}>
             <div css={buttonRow(2)}>
               <ComponentLabel
@@ -169,6 +169,13 @@ const Home = () => {
 const container = css`
   padding: 56px 80px 56px 80px;
   margin: 0 auto;
+`;
+
+const pageTitle = css`
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
 `;
 
 const buttonRows = css`

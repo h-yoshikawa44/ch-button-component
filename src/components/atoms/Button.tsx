@@ -135,6 +135,7 @@ const icon = (position: Position) => {
 const buttonBase = (size: Size) => {
   return css`
     padding: ${styleMap.padding[size]};
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;

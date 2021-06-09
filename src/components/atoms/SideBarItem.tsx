@@ -13,14 +13,12 @@ const SideBarItem: VFC<Props> = ({ text, selected = false }) => {
 const sideBarItem = (selected: boolean) => {
   return css`
     padding-bottom: 32px;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 14px;
-
-    /* font-family: Noto Sans JP; */
     font-weight: 500;
     line-height: 20px;
     color: ${selected ? '#090f31' : '#9e9e9e'};
     list-style: none;
-    pointer-events: none;
   `;
 };
 
