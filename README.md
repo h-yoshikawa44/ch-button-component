@@ -8,14 +8,14 @@
 
 <div align="center">
   <h3>
-    <a href="http://button-component-gold.vercel.app/">
+    <a href="https://button-component-h-yoshikawa44.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <!-- <a href="https://{your-url-to-the-solution}">
+    <a href="https://devchallenges.io/solutions/XYfovlFDBkg4qktnUh8b">
       Solution
     </a>
-    <span> | </span> -->
+    <span> | </span>
     <a href="https://devchallenges.io/challenges/ohgVTyJCbm5OZyTB2gNY">
       Challenge
     </a>
@@ -31,6 +31,7 @@
   - [Built With](#built-with)
 - [Features](#features)
 - [How To Use](#how-to-use)
+- [learned/improved](#learnedimproved)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
@@ -57,6 +58,8 @@ Base
 
 Other major libraries
 - [emotion](https://emotion.sh/)
+- [emotion-icons](https://emotion-icons.dev/)
+- [csx](https://typestyle.github.io/#/colors)
 
 ## Features
 
@@ -93,6 +96,12 @@ $ yarn install
 $ yarn dev
 ```
 
+## learned/improved
+- Basic usage of emotion
+- How to do a Grid layout
+- How to calculate the contrast ratio and make the text color suitable for the background color.
+- How to create a generic, small component from scratch without relying on a UI component library(It's still a very deep thing...)
+
 ## Acknowledgements
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
@@ -101,6 +110,8 @@ $ yarn dev
 - [emotion](https://emotion.sh/)
 - [emotion - フレームワークに依存しない洗練された CSS-in-JS](https://tech.recruit-mp.co.jp/front-end/post-17543/)
 - [CSS Grid Layout を極める！（場面別編）](https://qiita.com/kura07/items/486c19045aab8090d6d9)
+- [任意の背景色に対して読みやすい文字色を選択する方法](https://katashin.info/2018/12/18/247)
+- [また TypeScript で引数のデフォルト値処理とか](https://qiita.com/asa-taka/items/6057322a5f7da0e19b87)
 
 ## Contact
 
