@@ -14,6 +14,7 @@ const label = css`
   font-style: normal;
   font-weight: normal;
   line-height: 12px;
+  color: #000;
 `;
 
 export default Label;

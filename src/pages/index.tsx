@@ -176,6 +176,7 @@ const pageTitle = css`
   font-size: 24px;
   font-weight: 500;
   line-height: 36px;
+  color: #4f4f4f;
 `;
 
 const buttonRows = css`
