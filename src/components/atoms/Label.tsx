@@ -9,10 +9,12 @@ const Label: FC<Props> = ({ ...props }) => {
 };
 
 const label = css`
+  font-family: 'Ubuntu Mono', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: normal;
   line-height: 12px;
+  color: #000;
 `;
 
 export default Label;

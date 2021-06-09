@@ -8,13 +8,18 @@ const Home = () => {
     <Layout>
       <div css={container}>
         <main>
-          <h2>Buttons</h2>
+          <h2 css={pageTitle}>Buttons</h2>
           <div css={buttonRows}>
-            <div css={buttonRow(3)}>
+            <div css={buttonRow(2)}>
               <ComponentLabel
                 htmlFor="<Button />"
                 label="<Button />"
                 component={<Button />}
+              />
+              <ComponentLabel
+                htmlFor="<Button>Register</Button>"
+                label="<Button>Register</Button>"
+                component={<Button>Register</Button>}
               />
               <ComponentLabel
                 htmlFor={'<Button variant="outline" color="primary" />'}
@@ -34,14 +39,18 @@ const Home = () => {
                 component={<Button disableShadow color="primary" />}
               />
               <ComponentLabel
-                htmlFor={'<Button disabled />'}
-                label={'<Button disabled />'}
-                component={<Button disabled />}
+                htmlFor={'<Button disabled>Disabled</Button>'}
+                label={'<Button disabled>Disabled</Button>'}
+                component={<Button disabled>Disabled</Button>}
               />
               <ComponentLabel
-                htmlFor={'<Button variant="text" disabled />'}
-                label={'<Button variant="text" disabled />'}
-                component={<Button variant="text" disabled />}
+                htmlFor={'<Button variant="text" disabled>Disabled</Button>'}
+                label={'<Button variant="text" disabled>Disabled</Button>'}
+                component={
+                  <Button variant="text" disabled>
+                    Disabled
+                  </Button>
+                }
               />
             </div>
             <div css={buttonRow(2)}>
@@ -160,6 +169,14 @@ const Home = () => {
 const container = css`
   padding: 56px 80px 56px 80px;
   margin: 0 auto;
+`;
+
+const pageTitle = css`
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #4f4f4f;
 `;
 
 const buttonRows = css`
