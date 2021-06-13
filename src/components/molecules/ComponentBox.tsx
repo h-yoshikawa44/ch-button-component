@@ -7,9 +7,9 @@ type Props = ComponentPropsWithRef<'div'> & {
   component: React.ReactNode;
 };
 
-const ComponentBox: VFC<Props> = ({ title, component }) => {
+const ComponentBox: VFC<Props> = ({ title, component, ...props }) => {
   return (
-    <div>
+    <div {...props}>
       <SubTitle css={customSubTitle}>{title}</SubTitle>
       {component}
     </div>
