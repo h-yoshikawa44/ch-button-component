@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import Layout from '@/components/Layout';
 import Button from '@/components/atoms/Button';
-import ComponentLabel from '@/components/molecules/ComponentLabel';
+import ComponentBox from '@/components/molecules/ComponentBox';
 
 const Home = () => {
   return (
@@ -11,41 +11,31 @@ const Home = () => {
           <h2 css={pageTitle}>Buttons</h2>
           <div css={buttonRows}>
             <div css={buttonRow(2)}>
-              <ComponentLabel
-                htmlFor="<Button />"
-                label="<Button />"
-                component={<Button />}
-              />
-              <ComponentLabel
-                htmlFor="<Button>Register</Button>"
-                label="<Button>Register</Button>"
+              <ComponentBox title="<Button />" component={<Button />} />
+              <ComponentBox
+                title="<Button>Register</Button>"
                 component={<Button>Register</Button>}
               />
-              <ComponentLabel
-                htmlFor={'<Button variant="outline" color="primary" />'}
-                label={'<Button variant="outline" color="primary" />'}
+              <ComponentBox
+                title='<Button variant="outline" color="primary" />'
                 component={<Button variant="outline" color="primary" />}
               />
-              <ComponentLabel
-                htmlFor={'<Button variant="text" color="primary" />'}
-                label={'<Button variant="text" color="primary" />'}
+              <ComponentBox
+                title='<Button variant="text" color="primary" />'
                 component={<Button variant="text" color="primary" />}
               />
             </div>
             <div css={buttonRow(3)}>
-              <ComponentLabel
-                htmlFor={'<Button disableShadow color="primary" />'}
-                label={'<Button disableShadow color="primary" />'}
+              <ComponentBox
+                title='<Button disableShadow color="primary" />'
                 component={<Button disableShadow color="primary" />}
               />
-              <ComponentLabel
-                htmlFor={'<Button disabled>Disabled</Button>'}
-                label={'<Button disabled>Disabled</Button>'}
+              <ComponentBox
+                title="<Button disabled>Disabled</Button>"
                 component={<Button disabled>Disabled</Button>}
               />
-              <ComponentLabel
-                htmlFor={'<Button variant="text" disabled>Disabled</Button>'}
-                label={'<Button variant="text" disabled>Disabled</Button>'}
+              <ComponentBox
+                title='<Button variant="text" disabled>Disabled</Button>'
                 component={
                   <Button variant="text" disabled>
                     Disabled
@@ -54,108 +44,75 @@ const Home = () => {
               />
             </div>
             <div css={buttonRow(2)}>
-              <ComponentLabel
-                htmlFor={
-                  '<Button startIcon="local_grocery_store" color="primary" />'
-                }
-                label={
-                  '<Button startIcon="local_grocery_store" color="primary" />'
-                }
+              <ComponentBox
+                title='<Button startIcon="local_grocery_store" color="primary" />'
                 component={
                   <Button startIcon="local_grocery_store" color="primary" />
                 }
               />
-              <ComponentLabel
-                htmlFor={
-                  '<Button endIcon="local_grocery_store" color="primary" />'
-                }
-                label={
-                  '<Button endIcon="local_grocery_store" color="primary" />'
-                }
+              <ComponentBox
+                title='<Button endIcon="local_grocery_store" color="primary" />'
                 component={
                   <Button endIcon="local_grocery_store" color="primary" />
                 }
               />
-              <ComponentLabel
-                htmlFor={
-                  '<Button startIcon="local_shipping" color="primary" />'
-                }
-                label={'<Button startIcon="local_shipping" color="primary" />'}
+              <ComponentBox
+                title='<Button startIcon="local_shipping" color="primary" />'
                 component={
                   <Button startIcon="local_shipping" color="primary" />
                 }
               />
-              <ComponentLabel
-                htmlFor={
-                  '<Button endIcon="add_shopping_cart" color="primary" />'
-                }
-                label={'<Button endIcon="add_shopping_cart" color="primary" />'}
+              <ComponentBox
+                title='<Button endIcon="add_shopping_cart" color="primary" />'
                 component={
-                  <Button startIcon="add_shopping_cart" color="primary" />
+                  <Button endIcon="add_shopping_cart" color="primary" />
                 }
               />
-              <ComponentLabel
-                htmlFor={
-                  '<Button endIcon="production_quantity_limits" color="primary" />'
-                }
-                label={
-                  '<Button endIcon="production_quantity_limits" color="primary" />'
-                }
+              <ComponentBox
+                title='<Button endIcon="production_quantity_limits" color="primary" />'
                 component={
                   <Button
-                    startIcon="production_quantity_limits"
+                    endIcon="production_quantity_limits"
                     color="primary"
                   />
                 }
               />
-              <ComponentLabel
-                htmlFor={
-                  '<Button startIcon="remove_shopping_cart" color="primary" />'
-                }
-                label={
-                  '<Button startIcon="remove_shopping_cart" color="primary" />'
-                }
+              <ComponentBox
+                title='<Button startIcon="remove_shopping_cart" color="primary" />'
                 component={
                   <Button startIcon="remove_shopping_cart" color="primary" />
                 }
               />
             </div>
             <div css={buttonRow(3)}>
-              <ComponentLabel
-                htmlFor={'<Button size="sm" color="primary" />'}
-                label={'<Button size="sm" color="primary" />'}
+              <ComponentBox
+                title='<Button size="sm" color="primary" />'
                 component={<Button size="sm" color="primary" />}
               />
-              <ComponentLabel
-                htmlFor={'<Button size="md" color="primary" />'}
-                label={'<Button size="md" color="primary" />'}
+              <ComponentBox
+                title='<Button size="md" color="primary" />'
                 component={<Button size="md" color="primary" />}
               />
-              <ComponentLabel
-                htmlFor={'<Button size="lg" color="primary"/>'}
-                label={'<Button size="lg" color="primary" />'}
+              <ComponentBox
+                title='<Button size="lg" color="primary"/>'
                 component={<Button size="lg" color="primary" />}
               />
             </div>
             <div css={buttonRow(4)}>
-              <ComponentLabel
-                htmlFor={'<Button color="default" />'}
-                label={'<Button color="default" />'}
+              <ComponentBox
+                title='<Button color="default" />'
                 component={<Button color="default" />}
               />
-              <ComponentLabel
-                htmlFor={'<Button color="primary" />'}
-                label={'<Button color="primary" />'}
+              <ComponentBox
+                title='<Button color="primary" />'
                 component={<Button color="primary" />}
               />
-              <ComponentLabel
-                htmlFor={'<Button color="secondary" />'}
-                label={'<Button color="secondary" />'}
+              <ComponentBox
+                title='<Button color="secondary" />'
                 component={<Button color="secondary" />}
               />
-              <ComponentLabel
-                htmlFor={'<Button color="danger" />'}
-                label={'<Button color="danger" />'}
+              <ComponentBox
+                title='<Button color="danger" />'
                 component={<Button color="danger" />}
               />
             </div>
