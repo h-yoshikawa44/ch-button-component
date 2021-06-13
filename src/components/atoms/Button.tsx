@@ -1,4 +1,4 @@
-import { VFC, FC, ButtonHTMLAttributes, ClassAttributes } from 'react';
+import { VFC, FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import {
   LocalGroceryStore,
@@ -43,16 +43,15 @@ const Icon: VFC<IconProps> = ({ iconName, position }) => {
   );
 };
 
-type ButtonProps = ClassAttributes<HTMLButtonElement> &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
-    variant?: Variant;
-    size?: Size;
-    color?: Color;
-    startIcon?: IconName;
-    endIcon?: IconName;
-    disableShadow?: boolean;
-    disabled?: boolean;
-  };
+type ButtonProps = ComponentPropsWithRef<'button'> & {
+  variant?: Variant;
+  size?: Size;
+  color?: Color;
+  startIcon?: IconName;
+  endIcon?: IconName;
+  disableShadow?: boolean;
+  disabled?: boolean;
+};
 
 const Button: FC<ButtonProps> = ({
   children = 'Default',
