@@ -39,7 +39,7 @@
 
 ## Overview
 
-![overview](/screenshot/overview.png)
+![overview](/screenshots/overview.png)
 
 I've been using UI component libraries for the most part.
 This time, I challenged myself to create a component from scratch using emotion and write the style.
