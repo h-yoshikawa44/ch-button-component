@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 import Button from '@/components/common/Button';
 import ComponentBox from '@/components/common/ComponentBox';
-import { colors } from '@/styles/constants';
+import { breakPoint, colors } from '@/styles/constants';
 
 const Home = () => {
   return (
-    <main>
+    <main css={main}>
       <div css={container}>
         <h2 css={pageTitle}>Buttons</h2>
         <div css={buttonRows}>
@@ -114,9 +114,14 @@ const Home = () => {
   );
 };
 
+const main = css`
+  margin: 56px 0;
+`;
+
 const container = css`
-  padding: 56px 80px 56px 80px;
-  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 8%;
+  margin-right: auto;
 `;
 
 const pageTitle = css`
@@ -139,6 +144,10 @@ const buttonRow = (column: number) => {
     grid-template-columns: repeat(${column}, max-content);
     grid-row-gap: 45px;
     grid-column-gap: 64px;
+
+    @media (max-width: ${breakPoint.md - 1}px) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
+    }
   `;
 };
 

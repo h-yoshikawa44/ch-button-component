@@ -14,10 +14,10 @@ const Layout: FC = ({ children }) => {
           content="devChallenges.io - Button component | by h-yoshikawa44"
         />
       </Head>
-      <div css={container}>
+      <div css={globalLayout}>
         <SideBar />
-        <div>
-          {children}
+        <div css={rightBlock}>
+          <div css={contents}>{children}</div>
           <Footer />
         </div>
       </div>
@@ -25,8 +25,19 @@ const Layout: FC = ({ children }) => {
   );
 };
 
-const container = css`
+const globalLayout = css`
+  display: grid;
+  grid-template-columns: 200px 1fr;
+`;
+
+const rightBlock = css`
   display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`;
+
+const contents = css`
+  flex: 1 0 auto;
 `;
 
 export default Layout;
