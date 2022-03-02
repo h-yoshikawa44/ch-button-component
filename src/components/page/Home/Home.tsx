@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import Button from '@/components/common/Button';
 import ComponentBox from '@/components/common/ComponentBox';
+import { colors } from '@/styles/constants';
 
 const Home = () => {
   return (
@@ -123,7 +124,7 @@ const pageTitle = css`
   font-size: 24px;
   font-weight: 500;
   line-height: 36px;
-  color: #4f4f4f;
+  color: ${colors.blackLighten};
 `;
 
 const buttonRows = css`

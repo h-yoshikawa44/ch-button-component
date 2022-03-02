@@ -7,7 +7,8 @@ import {
   RemoveShoppingCart,
   LocalShipping,
 } from '@emotion-icons/material-rounded';
-import { getRGBAColor, selectContrastTextColor } from '@/util/color';
+import { fonts, colors } from '@/styles/constants';
+import { getRGBAColor, selectContrastTextColor } from '@/lib/color';
 
 type Position = 'start' | 'end';
 type Variant = 'contained' | 'outline' | 'text';
@@ -90,28 +91,28 @@ const styleMap = {
   },
   color: {
     default: {
-      normal: '#E0E0E0',
-      hover: '#AEAEAE',
-      text: '#3F3F3F',
+      normal: colors.base,
+      hover: colors.baseDarken,
+      text: colors.black,
     },
     primary: {
-      normal: '#2962FF',
-      hover: '#0039CB',
-      text: '#FFFFFF',
+      normal: colors.primary,
+      hover: colors.primaryDarken,
+      text: colors.white,
     },
     secondary: {
-      normal: '#455A64',
-      hover: '#1C313A',
-      text: '#FFFFFF',
+      normal: colors.secondary,
+      hover: colors.secondaryDarken,
+      text: colors.white,
     },
     danger: {
-      normal: '#D32F2F',
-      hover: '#9A0007',
-      text: '#FFFFFF',
+      normal: colors.danger,
+      hover: colors.dangerDarken,
+      text: colors.white,
     },
     disabled: {
-      normal: '#E0E0E0',
-      text: '#9E9E9E',
+      normal: colors.action.disabled,
+      text: colors.gray,
     },
   },
 };
@@ -134,7 +135,7 @@ const icon = (position: Position) => {
 const buttonBase = (size: Size) => {
   return css`
     padding: ${styleMap.padding[size]};
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: ${fonts.notoSansJp};
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -155,8 +156,8 @@ const buttonColor = ({
 }) => {
   if (variant === 'contained') {
     const textColor = selectContrastTextColor(styleMap.color[color].normal, {
-      whiteColor: '#FFFFFF',
-      blackColor: '#3F3F3F',
+      whiteColor: colors.white,
+      blackColor: colors.black,
     });
     return css`
       color: ${textColor};
@@ -173,7 +174,7 @@ const buttonColor = ({
     const rgbaColor = getRGBAColor(styleMap.color[color].hover, 0.1);
     return css`
       color: ${styleMap.color[color].normal};
-      background-color: #fff;
+      background-color: ${colors.white};
       border: 1px solid ${styleMap.color[color].normal};
 
       &:hover,
@@ -186,7 +187,7 @@ const buttonColor = ({
     const rgbaColor = getRGBAColor(styleMap.color[color].hover, 0.1);
     return css`
       color: ${styleMap.color[color].normal};
-      background-color: #fff;
+      background-color: ${colors.white};
 
       &:hover,
       &:focus {
@@ -201,7 +202,8 @@ const buttonDisableShadow = css`
 `;
 
 const buttonDisableColor = (variant: Variant) => {
-  const bgColor = variant === 'text' ? '#fff' : styleMap.color.disabled.normal;
+  const bgColor =
+    variant === 'text' ? colors.white : styleMap.color.disabled.normal;
 
   return css`
     color: ${styleMap.color.disabled.text};

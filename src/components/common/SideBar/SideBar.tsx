@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import SideBarItem from '@/components/common/SideBarItem';
+import { fonts, colors } from '@/styles/constants';
 
 const SideBar = () => {
   return (
@@ -23,18 +24,18 @@ const SideBar = () => {
 
 const sideBar = css`
   padding: 48px 56px;
-  background-color: #fafbfd;
+  background-color: ${colors.whiteDarken};
 `;
 
 const siteTitle = css`
-  font-family: 'Poppins', sans-serif;
+  font-family: ${fonts.poppins};
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
   line-height: 19px;
 
   span {
-    color: #f7542e;
+    color: ${colors.orange};
   }
 `;
 
