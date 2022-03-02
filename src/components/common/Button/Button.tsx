@@ -120,30 +120,34 @@ const styleMap = {
 const icon = (position: Position) => {
   if (position === 'start') {
     return css`
-      padding-right: 10px;
-      vertical-align: text-bottom;
+      margin-right: 10px;
     `;
   }
   if (position === 'end') {
     return css`
-      padding-left: 10px;
-      vertical-align: text-bottom;
+      margin-left: 10px;
     `;
   }
 };
 
 const buttonBase = (size: Size) => {
   return css`
+    display: inline-flex;
+    align-items: center;
     padding: ${styleMap.padding[size]};
     font-family: ${fonts.notoSansJp};
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
-    text-align: center;
     border: none;
     border-radius: 6px;
     transition: background-color 0.3s;
+    cursor: pointer;
+
+    &:focus:not(.focus-visible) {
+      outline-color: transparent;
+    }
   `;
 };
 

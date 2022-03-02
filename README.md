@@ -60,6 +60,7 @@ Other major libraries
 - [emotion](https://emotion.sh/)
 - [emotion-icons](https://emotion-icons.dev/)
 - [csx](https://typestyle.github.io/#/colors)
+- [focus-visible](https://github.com/WICG/focus-visible)
 
 ## Features
 
