@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import Button from '@/components/common/Button';
 import ComponentBox from '@/components/common/ComponentBox';
 import { breakPoint, colors } from '@/styles/constants';
+import { poppins } from '@/styles/fonts';
 
 const Home = () => {
   return (
@@ -125,7 +126,7 @@ const container = css`
 `;
 
 const pageTitle = css`
-  font-family: 'Poppins', sans-serif;
+  font-family: ${poppins.style.fontFamily};
   font-size: 24px;
   font-weight: 500;
   line-height: 36px;
@@ -142,10 +143,9 @@ const buttonRow = (column: number) => {
   return css`
     display: grid;
     grid-template-columns: repeat(${column}, max-content);
-    grid-row-gap: 45px;
-    grid-column-gap: 64px;
+    grid-gap: 45px 64px;
 
-    @media (max-width: ${breakPoint.md - 1}px) {
+    @media (width < ${breakPoint.md}px) {
       grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
     }
   `;

@@ -51,16 +51,16 @@ I'm not used to starting from scratch, so it took me a long time to implement ju
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 Base
-- [Node.js](https://nodejs.org/)：14.19.0
-- [TypeScript](https://www.typescriptlang.org/)：4.6.2
-- [React](https://reactjs.org/)：17.0.2
-- [Next.js](https://nextjs.org/)：12.1.0
+- [Node.js](https://nodejs.org/)：18.17.1
+- [TypeScript](https://www.typescriptlang.org/)：5.2.2
+- [React](https://reactjs.org/)：18.2.0
+- [Next.js](https://nextjs.org/)：13.5.3
 
 Other major libraries
 - [emotion](https://emotion.sh/)
 - [emotion-icons](https://emotion-icons.dev/)
-- [csx](https://typestyle.github.io/#/colors)
-- [focus-visible](https://github.com/WICG/focus-visible)
+- [polished](https://polished.js.org/)
+- [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env)
 
 ## Features
 
@@ -82,19 +82,19 @@ This application/site was created as a submission to a [DevChallenges](https://l
 
 <!-- This is an example, please update according to your application -->
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [yarn](https://yarnpkg.com/)) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](https://www.npmjs.com/)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/h-yoshikawa44/button-component.git
+git clone https://github.com/h-yoshikawa44/button-component.git
 or
-$ git clone git@github.com:h-yoshikawa44/button-component.git
+git clone git@github.com:h-yoshikawa44/button-component.git
 
 # Install dependencies
-$ yarn install
+npm install
 
 # Run the app
-$ yarn dev
+npm run dev
 ```
 
 ## learned/improved

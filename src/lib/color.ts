@@ -1,52 +1,21 @@
-import { color } from 'csx';
-
-/**
- * 色情報 + 透明度をもとにした RGBA 値を文字列で取得
- * @param colorValue - 色情報（16進数カラーコード値 or CSS カラー関数）
- * @param alpha - 透明度（% or 少数値）
- * @return - RGBA 値の文字列
- */
-export const getRGBAColor = (
-  colorValue: string,
-  alpha: string | number = 0
-): string => {
-  return color(colorValue).fade(alpha).toString();
-};
+import { getContrast } from 'polished';
 
 /**
  * 色情報に対して、白か黒かコントラスト比が大きい方の色を返す
- * @param colorValue - 色情報（16進数カラーコード値 or CSS カラー関数）
+ * 引数も返り値も16進数カラーコード値前提
+ * @param baseColor - 色情報
  * @param whiteColor - 使用候補の白系の色情報
  * @param blackColor - 使用候補の黒系の色情報
  * @return - 白か黒かコントラスト比が大きい方の色情報
  */
 export const selectContrastTextColor = (
-  colorValue: string,
+  baseColor: string,
   {
-    whiteColor = 'white',
-    blackColor = 'black',
-  }: Partial<{ whiteColor: string; blackColor: string }> = {}
+    whiteColor = '#ffffff',
+    blackColor = '#000000',
+  }: Partial<{ whiteColor: string; blackColor: string }> = {},
 ): string => {
-  // sRGB 形式の色を RGB 形式の色に変換（CSS の色の値は sRGB）
-  const sRGBtoRGBItem = (color: number) => {
-    const i = color / 255;
-    return i <= 0.03928 ? i / 12.92 : Math.pow((i + 0.055) / 1.055, 2.4);
-  };
-
-  const R = sRGBtoRGBItem(color(colorValue).red());
-  const G = sRGBtoRGBItem(color(colorValue).green());
-  const B = sRGBtoRGBItem(color(colorValue).blue());
-  // 背景色の相対輝度を計算
-  const Lbg = 0.2126 * R + 0.7152 * G + 0.0722 * B;
-
-  // 白と黒の相対輝度（WCAG 定義より、それぞれ1と0）
-  const Lw = 1;
-  const Lb = 0;
-
-  // 白と背景色のコントラスト比、黒と背景色のコントラスト比をそれぞれ計算
-  const Cw = (Lw + 0.05) / (Lbg + 0.05);
-  const Cb = (Lbg + 0.05) / (Lb + 0.05);
-
-  // コントラスト比が大きい方を文字色として返す
-  return Cw < Cb ? blackColor : whiteColor;
+  return getContrast(baseColor, whiteColor) < getContrast(baseColor, blackColor)
+    ? blackColor
+    : whiteColor;
 };

@@ -1,17 +1,21 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import Head from 'next/head';
 import { css } from '@emotion/react';
 import SideBar from '@/components/common/SideBar';
 import Footer from '@/components/common/Footer';
 
-const Layout: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+const Layout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Head>
         <title>Button component</title>
         <meta
           name="description"
-          content="devChallenges.io - Button component | by h-yoshikawa44"
+          content="devChallenges.io(legacy) - Button component | by h-yoshikawa44"
         />
       </Head>
       <div css={globalLayout}>
@@ -32,8 +36,8 @@ const globalLayout = css`
 
 const rightBlock = css`
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
 `;
 
 const contents = css`

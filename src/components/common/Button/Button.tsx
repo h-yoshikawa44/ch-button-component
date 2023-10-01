@@ -1,4 +1,4 @@
-import { VFC, FC, ComponentPropsWithRef } from 'react';
+import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import {
   LocalGroceryStore,
@@ -7,8 +7,10 @@ import {
   RemoveShoppingCart,
   LocalShipping,
 } from '@emotion-icons/material-rounded';
-import { fonts, colors } from '@/styles/constants';
-import { getRGBAColor, selectContrastTextColor } from '@/lib/color';
+import { darken, rgba } from 'polished';
+import { colorRatios, colors } from '@/styles/constants';
+import { notoSansJp } from '@/styles/fonts';
+import { selectContrastTextColor } from '@/lib/color';
 
 type Position = 'start' | 'end';
 type Variant = 'contained' | 'outline' | 'text';
@@ -26,7 +28,7 @@ type IconProps = {
   position: Position;
 };
 
-const Icon: VFC<IconProps> = ({ iconName, position }) => {
+const Icon: FC<IconProps> = ({ iconName, position }) => {
   const size = 14;
 
   return (
@@ -92,22 +94,18 @@ const styleMap = {
   color: {
     default: {
       normal: colors.base,
-      hover: colors.baseDarken,
       text: colors.black,
     },
     primary: {
       normal: colors.primary,
-      hover: colors.primaryDarken,
       text: colors.white,
     },
     secondary: {
       normal: colors.secondary,
-      hover: colors.secondaryDarken,
       text: colors.white,
     },
     danger: {
       normal: colors.danger,
-      hover: colors.dangerDarken,
       text: colors.white,
     },
     disabled: {
@@ -135,17 +133,17 @@ const buttonBase = (size: Size) => {
     display: inline-flex;
     align-items: center;
     padding: ${styleMap.padding[size]};
-    font-family: ${fonts.notoSansJp};
+    font-family: ${notoSansJp.style.fontFamily};
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
+    cursor: pointer;
     border: none;
     border-radius: 6px;
     transition: background-color 0.3s;
-    cursor: pointer;
 
-    &:focus:not(.focus-visible) {
+    &:focus:not(:focus-visible) {
       outline-color: transparent;
     }
   `;
@@ -166,16 +164,18 @@ const buttonColor = ({
     return css`
       color: ${textColor};
       background-color: ${styleMap.color[color].normal};
-      box-shadow: 0 2px 3px rgba(51, 51, 51, 0.2);
+      box-shadow: 0 2px 3px rgb(51 51 51 / 20%);
 
       &:hover,
       &:focus {
-        background-color: ${styleMap.color[color].hover};
+        background-color: ${darken(
+          colorRatios.buttonDarken,
+          styleMap.color[color].normal,
+        )};
       }
     `;
   }
   if (variant === 'outline') {
-    const rgbaColor = getRGBAColor(styleMap.color[color].hover, 0.1);
     return css`
       color: ${styleMap.color[color].normal};
       background-color: ${colors.white};
@@ -183,19 +183,24 @@ const buttonColor = ({
 
       &:hover,
       &:focus {
-        background-color: ${rgbaColor};
+        background-color: ${rgba(
+          styleMap.color[color].normal,
+          colorRatios.buttonAlpha,
+        )};
       }
     `;
   }
   if (variant === 'text') {
-    const rgbaColor = getRGBAColor(styleMap.color[color].hover, 0.1);
     return css`
       color: ${styleMap.color[color].normal};
       background-color: ${colors.white};
 
       &:hover,
       &:focus {
-        background-color: ${rgbaColor};
+        background-color: ${rgba(
+          styleMap.color[color].normal,
+          colorRatios.buttonAlpha,
+        )};
       }
     `;
   }
