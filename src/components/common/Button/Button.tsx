@@ -7,7 +7,8 @@ import {
   RemoveShoppingCart,
   LocalShipping,
 } from '@emotion-icons/material-rounded';
-import { fonts, colors } from '@/styles/constants';
+import { colors } from '@/styles/constants';
+import { notoSansJp } from '@/styles/fonts';
 import { getRGBAColor, selectContrastTextColor } from '@/lib/color';
 
 type Position = 'start' | 'end';
@@ -135,7 +136,7 @@ const buttonBase = (size: Size) => {
     display: inline-flex;
     align-items: center;
     padding: ${styleMap.padding[size]};
-    font-family: ${fonts.notoSansJp};
+    font-family: ${notoSansJp.style.fontFamily};
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
