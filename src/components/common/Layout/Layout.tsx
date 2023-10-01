@@ -15,7 +15,7 @@ const Layout: FC<Props> = ({ children }) => {
         <title>Button component</title>
         <meta
           name="description"
-          content="devChallenges.io - Button component | by h-yoshikawa44"
+          content="devChallenges.io(legacy) - Button component | by h-yoshikawa44"
         />
       </Head>
       <div css={globalLayout}>
