@@ -146,7 +146,7 @@ const buttonBase = (size: Size) => {
     border-radius: 6px;
     transition: background-color 0.3s;
 
-    &:focus:not(.focus-visible) {
+    &:focus:not(:focus-visible) {
       outline-color: transparent;
     }
   `;
