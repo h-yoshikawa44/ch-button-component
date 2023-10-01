@@ -53,8 +53,8 @@ I'm not used to starting from scratch, so it took me a long time to implement ju
 Base
 - [Node.js](https://nodejs.org/)：18.17.1
 - [TypeScript](https://www.typescriptlang.org/)：4.6.2
-- [React](https://reactjs.org/)：17.0.2
-- [Next.js](https://nextjs.org/)：12.1.0
+- [React](https://reactjs.org/)：18.2.0
+- [Next.js](https://nextjs.org/)：13.5.3
 
 Other major libraries
 - [emotion](https://emotion.sh/)
