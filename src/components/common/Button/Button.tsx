@@ -1,4 +1,4 @@
-import { VFC, FC, ComponentPropsWithRef } from 'react';
+import { FC, ComponentPropsWithRef } from 'react';
 import { css } from '@emotion/react';
 import {
   LocalGroceryStore,
@@ -26,7 +26,7 @@ type IconProps = {
   position: Position;
 };
 
-const Icon: VFC<IconProps> = ({ iconName, position }) => {
+const Icon: FC<IconProps> = ({ iconName, position }) => {
   const size = 14;
 
   return (
@@ -140,10 +140,10 @@ const buttonBase = (size: Size) => {
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
+    cursor: pointer;
     border: none;
     border-radius: 6px;
     transition: background-color 0.3s;
-    cursor: pointer;
 
     &:focus:not(.focus-visible) {
       outline-color: transparent;
@@ -166,7 +166,7 @@ const buttonColor = ({
     return css`
       color: ${textColor};
       background-color: ${styleMap.color[color].normal};
-      box-shadow: 0 2px 3px rgba(51, 51, 51, 0.2);
+      box-shadow: 0 2px 3px rgb(51 51 51 / 20%);
 
       &:hover,
       &:focus {
