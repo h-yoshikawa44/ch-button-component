@@ -36,8 +36,8 @@ const globalLayout = css`
 
 const rightBlock = css`
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
 `;
 
 const contents = css`
