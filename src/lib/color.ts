@@ -8,7 +8,7 @@ import { color } from 'csx';
  */
 export const getRGBAColor = (
   colorValue: string,
-  alpha: string | number = 0
+  alpha: string | number = 0,
 ): string => {
   return color(colorValue).fade(alpha).toString();
 };
@@ -25,7 +25,7 @@ export const selectContrastTextColor = (
   {
     whiteColor = 'white',
     blackColor = 'black',
-  }: Partial<{ whiteColor: string; blackColor: string }> = {}
+  }: Partial<{ whiteColor: string; blackColor: string }> = {},
 ): string => {
   // sRGB 形式の色を RGB 形式の色に変換（CSS の色の値は sRGB）
   const sRGBtoRGBItem = (color: number) => {
