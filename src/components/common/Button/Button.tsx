@@ -7,9 +7,10 @@ import {
   RemoveShoppingCart,
   LocalShipping,
 } from '@emotion-icons/material-rounded';
-import { colors } from '@/styles/constants';
+import { darken, rgba } from 'polished';
+import { colorRatios, colors } from '@/styles/constants';
 import { notoSansJp } from '@/styles/fonts';
-import { getRGBAColor, selectContrastTextColor } from '@/lib/color';
+import { selectContrastTextColor } from '@/lib/color';
 
 type Position = 'start' | 'end';
 type Variant = 'contained' | 'outline' | 'text';
@@ -93,22 +94,18 @@ const styleMap = {
   color: {
     default: {
       normal: colors.base,
-      hover: colors.baseDarken,
       text: colors.black,
     },
     primary: {
       normal: colors.primary,
-      hover: colors.primaryDarken,
       text: colors.white,
     },
     secondary: {
       normal: colors.secondary,
-      hover: colors.secondaryDarken,
       text: colors.white,
     },
     danger: {
       normal: colors.danger,
-      hover: colors.dangerDarken,
       text: colors.white,
     },
     disabled: {
@@ -171,12 +168,14 @@ const buttonColor = ({
 
       &:hover,
       &:focus {
-        background-color: ${styleMap.color[color].hover};
+        background-color: ${darken(
+          colorRatios.buttonDarken,
+          styleMap.color[color].normal,
+        )};
       }
     `;
   }
   if (variant === 'outline') {
-    const rgbaColor = getRGBAColor(styleMap.color[color].hover, 0.1);
     return css`
       color: ${styleMap.color[color].normal};
       background-color: ${colors.white};
@@ -184,19 +183,24 @@ const buttonColor = ({
 
       &:hover,
       &:focus {
-        background-color: ${rgbaColor};
+        background-color: ${rgba(
+          styleMap.color[color].normal,
+          colorRatios.buttonAlpha,
+        )};
       }
     `;
   }
   if (variant === 'text') {
-    const rgbaColor = getRGBAColor(styleMap.color[color].hover, 0.1);
     return css`
       color: ${styleMap.color[color].normal};
       background-color: ${colors.white};
 
       &:hover,
       &:focus {
-        background-color: ${rgbaColor};
+        background-color: ${rgba(
+          styleMap.color[color].normal,
+          colorRatios.buttonAlpha,
+        )};
       }
     `;
   }
