@@ -5,7 +5,7 @@ import { globalStyle } from '@/styles/globals';
 import { createEmotionCache } from '@/lib/emotionCache';
 
 const clientSideEmotionCache = createEmotionCache();
-interface MyAppProps extends AppProps {
+export interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
 
