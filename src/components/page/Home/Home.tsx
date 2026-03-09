@@ -135,7 +135,7 @@ const pageTitle = css`
 
 const buttonRows = css`
   display: grid;
-  grid-row-gap: 45px;
+  row-gap: 45px;
   padding-top: 24px;
 `;
 
@@ -143,7 +143,7 @@ const buttonRow = (column: number) => {
   return css`
     display: grid;
     grid-template-columns: repeat(${column}, max-content);
-    grid-gap: 45px 64px;
+    gap: 45px 64px;
 
     @media (width < ${breakPoint.md}px) {
       grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
