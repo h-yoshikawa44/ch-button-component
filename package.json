@@ -26,8 +26,8 @@
     "csx": "^10.0.2",
     "next": "^16.1.6",
     "polished": "^4.3.1",
-    "postcss": "^8.5.2",
-    "postcss-preset-env": "^10.1.4",
+    "postcss": "^8.5.6",
+    "postcss-preset-env": "^11.2.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
