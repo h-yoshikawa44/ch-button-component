@@ -47,7 +47,7 @@ I'm not used to starting from scratch, so it took me a long time to implement ju
 
 Base
 - [Node.js](https://nodejs.org/)：24.22.1
-- [TypeScript](https://www.typescriptlang.org/)：5.9.3
+- [TypeScript](https://www.typescriptlang.org/)：6.0.3
 - [React](https://reactjs.org/)：19.3.1
 - [Next.js](https://nextjs.org/)：16.4.2
   - Pages Router
