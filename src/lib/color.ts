@@ -1,4 +1,4 @@
-import { getContrast } from 'polished';
+import { readability } from '@ctrl/tinycolor';
 
 /**
  * 色情報に対して、白か黒かコントラスト比が大きい方の色を返す
@@ -15,7 +15,7 @@ export const selectContrastTextColor = (
     blackColor = '#000000',
   }: Partial<{ whiteColor: string; blackColor: string }> = {},
 ): string => {
-  return getContrast(baseColor, whiteColor) < getContrast(baseColor, blackColor)
+  return readability(baseColor, whiteColor) < readability(baseColor, blackColor)
     ? blackColor
     : whiteColor;
 };

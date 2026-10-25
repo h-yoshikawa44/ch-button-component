@@ -7,7 +7,7 @@ import {
   RemoveShoppingCart,
   LocalShipping,
 } from '@emotion-icons/material-rounded';
-import { darken, rgba } from 'polished';
+import { TinyColor } from '@ctrl/tinycolor';
 import { colorRatios, colors } from '@/styles/constants';
 import { notoSansJp } from '@/styles/fonts';
 import { selectContrastTextColor } from '@/lib/color';
@@ -168,10 +168,9 @@ const buttonColor = ({
 
       &:hover,
       &:focus {
-        background-color: ${darken(
-          colorRatios.buttonDarken,
-          styleMap.color[color].normal,
-        )};
+        background-color: ${new TinyColor(styleMap.color[color].normal)
+          .darken(colorRatios.buttonDarken * 100)
+          .toHexString()};
       }
     `;
   }
@@ -183,10 +182,9 @@ const buttonColor = ({
 
       &:hover,
       &:focus {
-        background-color: ${rgba(
-          styleMap.color[color].normal,
-          colorRatios.buttonAlpha,
-        )};
+        background-color: ${new TinyColor(styleMap.color[color].normal)
+          .setAlpha(colorRatios.buttonAlpha)
+          .toRgbString()};
       }
     `;
   }
@@ -197,10 +195,9 @@ const buttonColor = ({
 
       &:hover,
       &:focus {
-        background-color: ${rgba(
-          styleMap.color[color].normal,
-          colorRatios.buttonAlpha,
-        )};
+        background-color: ${new TinyColor(styleMap.color[color].normal)
+          .setAlpha(colorRatios.buttonAlpha)
+          .toRgbString()};
       }
     `;
   }
